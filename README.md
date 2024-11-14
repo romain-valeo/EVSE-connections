@@ -33,55 +33,44 @@ eth2 is an additional port not visible, which is used for the communication with
 
 # 2. How to connect the board to the internet
 There are several possibilities how to connect the board to the internet.
+This can be useful to update the packages and bindings installed on the board.
 
 ## 2a. With a 4G dongle
 ![4g-dongle](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-USB-4G-dongle.jpg "4g-dongle")\
 Plug the 4G dongle in one of the USB port.\
 Ubuntu will recognize the 4G dongle and internet connection will be set up.\
-Check by ping: 
-```
-ping 8.8.8.8
-```
+Check by ping: `ping 8.8.8.8`\
 > [!NOTE]  
 > With our current dongle, this connection works randomly.
 
 ## 2b. With a smartphone as a router (USB)
 ![phone-USB](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-USB-phone.jpg "phone-USB")\
-Plug your smarthone in one of the USB port of the Phytec.\
+Connect your smarthone via one of the USB port of the Phytec.\
 Configure your phone as Access Point by USB (share internet access).\
 Ubuntu will recognize your phone as a router and internet connection will be set up.\
-Check by ping: 
-```
-ping 8.8.8.8
-```
+Check by ping: `ping 8.8.8.8`\
 
 ## 2c. With a smartphone as a router (wifi)
 ![phone-wifi](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-wifi-phone.jpg "phone-wifi")\
 Plug the wifi dongle in one of the USB port.\
-Scan the available Wifi networks : nmcli device wifi list.\
-If you want to use a smartphone, open wifi access point on it.\
-Connect to the wifi network:
-```
-nmcli device wifi connect "router_ssid" --ask
-```
+If you use a smartphone, open wifi access point on it.\
+Scan the available Wifi networks : `nmcli device wifi list`.\
+You may have to try several times, maybe even unplug/plug the dongle to make it work properly.\
+Connect to the wifi network: `nmcli device wifi connect "router_ssid" --ask`
+
 > [!NOTE]  
 > "router_ssid" can refer to any smartphone or router you want to connect to.
 
 Enter the password.\
 If successful, internet connection will be set up.\
-Check by ping: 
-```
-ping 8.8.8.8
-```
+Check by ping: `ping 8.8.8.8`\
 
 ## 2d. With a wired connection to a router
 ![router-eth](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-eth-router.jpg "router-eth")\
 Connect your router to the board via eth1 port.\
 Ubuntu will recognize the connection and internet connection will be set up.\
-Check by ping: 
-```
-ping 8.8.8.8
-```
+Check by ping: `ping 8.8.8.8`\
+
 # 3. Configuration for static and local testing
 This configuration is the simplest one for testing. It uses forced addresses on both sides to start communication between the PC and the Phytec board.\
 ![static](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-static-testing.jpg "static")\
