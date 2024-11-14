@@ -83,11 +83,38 @@ Check by ping:
 ping 8.8.8.8
 ```
 # 3. Configuration for static and local testing
+This configuration is the simplest one for testing. It uses forced addresses on both sides to start communication between the PC and the Phytec board.\
 ![static](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-static-testing.jpg "static")\
-From initial configuration of the Phytec board, nothing to be done on the board itself.\
 Plug the ethernet cable on the eth0 port of the Phytec, and on the USB/eth converter of the PC.\
+On the PC, on Ubuntu, configure the wired connection (USB ethernet) with static address 192.168.10.1 and mask with 255.255.255.0.\
+Then disable and enable the connection to take into account the changes.\
+You can confirm with the command `ip a` in the terminal of the PC.\\
+```
+l-rmunier@pon1-l13395:~$ ip a
+[...]
+1156: enxf8e43b040da9: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether f8:e4:3b:04:0d:a9 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.10.1/24 brd 192.168.10.255 scope global noprefixroute enxf8e43b040da9
+       valid_lft forever preferred_lft forever
+    inet6 fe80::656f:45a9:e196:8ec/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+[...]
+```
+On the Phytec board, from initial configuration, nothing to be done.\
 You can confirm that the address 192.168.10.3 is assigned to the eth0 ethernet port with command `ip a` (when connected to board with the picocom for instance).\
-On the PC, configure the wired connection (USB ethernet) with static address 192.168.10.1 and mask with 255.255.255.0.\
-Deactivate and activate the connection.\
-You can confirm with the command `ip a` in the terminal of the PC.\
+```
+[root@tux-evse-valeo36 ~]# ip a
+[...]
+3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 28:b5:e8:e2:55:33 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.10.3/24 brd 192.168.10.255 scope global noprefixroute eth0
+       valid_lft forever preferred_lft forever
+[...]
+```
 Then connection should work : `ssh root@192.168.10.3` from the PC.\
+```
+l-rmunier@pon1-l13395:~$ ssh root@192.168.10.3
+root@192.168.10.3's password: 
+Last login: Thu Nov 14 11:17:35 2024 from 10.52.253.11
+[root@tux-evse-valeo36 ~]# 
+```
