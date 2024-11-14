@@ -16,7 +16,7 @@ The name of this port generally starts with "enp0".\
 \
 Another ethernet channel can be opened using a USB/ethernet converter (either USB-A or USB-C).\
 When connected to a device, it appears on command `ip a` with a name starting by "enx" (and "Ethernet USB" by Ubuntu).\
-In Ubuntu settings, this connection shall be configured as static, with IPv4 address being 192.168.10.1 and mask being 255.255.255.0. No IPv6 configuration required.
+In Ubuntu settings, this connection shall be configured as static, with IPv4 address being 192.168.10.1 and mask being 255.255.255.0. No IPv6 configuration required.\
 ![ubuntu-settings](https://github.com/user-attachments/assets/7633092e-c127-4a0c-b518-83eb4ea7439e)
 
 > [!NOTE]  
