@@ -23,7 +23,7 @@ In Ubuntu settings, this connection shall be configured as static, with IPv4 add
 > Connection to the Valeo Wifi network is disabled. Hence, only wired connection is possible.
 
 ## On the Phytec board
-On the Phytec board, if set-up instructions have been followed correctly, no additional configuration is needed.\
+On the Phytec board, if [set-up instructions]([url](https://github.com/deniz-valeo/deploy-redpeskOS-phytec-guide)) have been followed correctly, no additional configuration is needed.\
 eth0 is the one port next to the USB ports, eth1 is the other one.\
 eth0 port is configured as static with IPv4 address 192.168.10.3.\
 eth1 port is configured as dynamic (DHCP).\
