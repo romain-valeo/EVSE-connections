@@ -9,9 +9,9 @@ This guide explains how to configure EVSE connections with different usecases.\
 > [!NOTE]  
 > Nothing here so far
 
-# Nominal devices configuration :
-
-![Static testing configuration](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-static-testing.jpg "Static testing configuration")
+# Nominal devices configuration:
+Below is the definition of interfaces for both the Linux PC and the Phytec board.
+![set-up](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-set-up.jpg "set-up")
 
 
 
