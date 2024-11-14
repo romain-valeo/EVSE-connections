@@ -86,9 +86,9 @@ ping 8.8.8.8
 This configuration is the simplest one for testing. It uses forced addresses on both sides to start communication between the PC and the Phytec board.\
 ![static](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-static-testing.jpg "static")\
 Plug the ethernet cable on the eth0 port of the Phytec, and on the USB/eth converter of the PC.\
-On the PC, on Ubuntu, configure the wired connection (USB ethernet) with static address 192.168.10.1 and mask with 255.255.255.0.\
+On the PC, on Ubuntu, configure the wired connection (USB ethernet) with static address 192.168.10.1 and mask 255.255.255.0.\
 Then disable and enable the connection to take into account the changes.\
-You can confirm with the command `ip a` in the terminal of the PC.\\
+You can confirm the changes with the command `ip a` in the terminal of the PC.\
 ```
 l-rmunier@pon1-l13395:~$ ip a
 [...]
@@ -100,8 +100,9 @@ l-rmunier@pon1-l13395:~$ ip a
        valid_lft forever preferred_lft forever
 [...]
 ```
+\
 On the Phytec board, from initial configuration, nothing to be done.\
-You can confirm that the address 192.168.10.3 is assigned to the eth0 ethernet port with command `ip a` (when connected to board with the picocom for instance).\
+You can confirm that the address 192.168.10.3 is assigned to the eth0 port with command `ip a` (when connected to board with the picocom for instance).\
 ```
 [root@tux-evse-valeo36 ~]# ip a
 [...]
