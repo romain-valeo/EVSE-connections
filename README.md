@@ -133,7 +133,7 @@ As it is, any device can be reached remotely.\
 It fully relies on routers, DHCP mechanisms and VPN static addresses assigned to every device.
 ![fullremote](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-full-remote.jpg "fullremote")\
 As described in Phytec set up tutorial, each board shall have installed a VPN configuration file (with a specific IP address) and the VPN shall be activated.\
-Then, all boards can be connected to a router (at the office or at home) via the eth2 (DCHP) port.\
+Then, all boards can be connected to a router (at the office or at home) via the eth1 (DCHP) port.\
 All PCs shall have their VPN configuration files installed and the VPN activated also. They also have to be connected to the internet (possible through the Valeo network).\
 \
 After that, any board is reachable from any place using its VPN IP address: eg. `ssh root@10.52.253.36`.\
