@@ -1,4 +1,4 @@
-# How to configure your EVSE connections?
+# How to configure your EVSE connections
 
 | Author                 | Modification        | Date      |
 | ---------------------- | ------------------- | ------------------- |
@@ -9,9 +9,9 @@ This guide explains how to configure EVSE connections with different usecases.
 > [!NOTE]  
 > Nothing here so far
 
-# 1. Nominal devices configuration:
+# 1. Nominal devices configuration
 Below is the recommended configuratoin of interfaces for both the Linux PC and the Phytec board:
-![set-up](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-set-up.jpg "set-up")\
+![set-up](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-set-up.jpg "set-up")
 
 ## On the PC
 On the PC, the main ethernet port (on the right-hand side) shall be let with Ubuntu default settings (dynamic, DHCP), in order to be connected to the Valeo network or any router.
@@ -21,8 +21,8 @@ The name is port generally starts with "enp0".
 > Connection to the Wifi Valeo network is disabled. Hence, only wired connection is possible.
 
 Another ethernet channel can be opened using a USB/ethernet converter (either USB-A or USB-C).\
-When connected to a device, it appears on command 'ip a' with a name starting by "enx".\
-This port shall be configured as static in Linux settings, with IPv4 address being 192.168.10.1 and mask being 255.255.255.0. No IPv6 configuration required.
+When connected to a device, it appears on command 'ip a' with a name starting by "enx" (and "Ethernet USB" by Ubuntu).\
+This connection shall be configured as static in Ubuntu settings, with IPv4 address being 192.168.10.1 and mask being 255.255.255.0. No IPv6 configuration required.
 
 ## On the Phytec board
 On the Phytec board, if set-up instructions have been followed correctly, no additional configuration is needed.\
@@ -31,7 +31,7 @@ eth0 port is configured as static with IPv4 address 192.168.10.3.\
 eth1 port is configured as dynamic (DHCP).\
 eth2 is an additional port not visible, which is used for the communication with the PLC module (Codico). No configuration of this port is required.
 
-# 2. How to connect the board to the internet:
+# 2. How to connect the board to the internet
 There are several possibilities how to connect the board to the internet.
 
 ## 2a. With a 4G dongle
@@ -62,10 +62,11 @@ Scan the available Wifi networks : nmcli device wifi list.\
 If you want to use a smartphone, open wifi access point on it.\
 Connect to the wifi network:
 ```
-nmcli device wifi connect "network_ssid" --ask
+nmcli device wifi connect "router_ssid" --ask
 ```
 > [!NOTE]  
-> "network_ssid" can refer to any smartphone or router you want to connect to.\
+> "router_ssid" can refer to any smartphone or router you want to connect to.
+
 Enter the password.\
 If successful, internet connection will be set up.\
 Check by ping: 
@@ -81,3 +82,12 @@ Check by ping:
 ```
 ping 8.8.8.8
 ```
+# 3. Configuration for static and local testing
+![static](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-static-testing.jpg "static")\
+From initial configuration of the Phytec board, nothing to be done on the board itself.\
+Plug the ethernet cable on the eth0 port of the Phytec, and on the USB/eth converter of the PC.\
+You can confirm that the address 192.168.10.3 is assigned to the eth0 ethernet port with command `ip a` (when connected to board with the picocom for instance).\
+On the PC, configure the wired connection (USB ethernet) with static address 192.168.10.1 and mask with 255.255.255.0.\
+Deactivate and activate the connection.\
+You can confirm with the command `ip a` in the terminal of the PC.\
+Then connection should work : `ssh root@192.168.10.3` from the PC.\
