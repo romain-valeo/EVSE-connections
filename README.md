@@ -115,15 +115,16 @@ From initial configuration of the Phytec board, nothing to be done on the board 
 Plug the ethernet cable on the eth0 port (address 192.168.10.3).\
 \
 On the PC, configure:\
-- the wired connection (enx, USB ethernet) with static address 192.168.10.1 and mask 255.255.255.0.\
-- the wired connection (enp0, PCI ethernet) with static address 192.168.37.10 and mask 255.255.255.0.\
+-the wired connection (enx, USB ethernet) with static address 192.168.10.1 and mask 255.255.255.0.\
+-the wired connection (enp0, PCI ethernet) with static address 192.168.37.10 and mask 255.255.255.0.\
+\
 Deactivate and activate both connections.\
 \
 Then connection to the Phytec board should work : `ssh root@192.168.10.3` from the PC.\
 To open the ComboCS UI, open a brower and type `http://192.168.37.167/ui`.
 
 # 5. Configuration for ISO15118 testing with the Trialog ComboCS (with LAN connection, and SLAC bypassed)
-![iso-lan-slac](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-iso-testing-lan-slacbyassed.jpg "iso-lan-without-slac")
+![iso-lan-slac](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-iso-testing-lan-slacbypassed.jpg "iso-lan-without-slac")
 
 # 6. Configuration for ISO15118 testing with the Trialog ComboCS (with LAN connection, and SLAC activated)
 ![iso-lan-slac](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-iso-testing-lan-slac.jpg "iso-lan-slac")
