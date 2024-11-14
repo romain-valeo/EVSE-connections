@@ -120,10 +120,15 @@ On the PC, configure:\
 Deactivate and activate both connections.\
 \
 Then connection to the Phytec board should work : `ssh root@192.168.10.3` from the PC.\
-To open the ComboCS UI, open a brower and type `http://192.168.37.167/ui`.\
+To open the ComboCS UI, open a brower and type `http://192.168.37.167/ui`.
 
 # 5. Configuration for ISO15118 testing with the Trialog ComboCS (with LAN connection, and SLAC bypassed)
+![iso-lan-slac](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-iso-testing-lan-slacbyassed.jpg "iso-lan-without-slac")
 
 # 6. Configuration for ISO15118 testing with the Trialog ComboCS (with LAN connection, and SLAC activated)
+![iso-lan-slac](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-iso-testing-lan-slac.jpg "iso-lan-slac")
 
-# 7. Configuration for ISO15118 testing with the Trialog ComboCS (with LAN connection, and SLAC activated)
+# 7. Full remote configuration
+Below is the recommeneded configuration for all connections between PCs, boards and the ComboCS.\
+It fully relies on DHCP mechanisms and VPN static addresses assigned to each device.
+![fullremote](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-full-remote.jpg "fullremote")
