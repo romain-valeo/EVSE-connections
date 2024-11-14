@@ -10,7 +10,7 @@ This guide explains how to configure EVSE connections with different usecases.
 > Nothing here so far
 
 # 1. Nominal devices configuration
-Below is the recommended configuratoin of interfaces for both the Linux PC and the Phytec board:
+Below is the recommended configuration of interfaces for both the Linux PC and the Phytec board:
 ![set-up](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-set-up.jpg "set-up")
 
 ## On the PC
@@ -18,8 +18,9 @@ On the PC, the main ethernet port (on the right-hand side) shall be let with Ubu
 The name of this port generally starts with "enp0".\
 \
 Another ethernet channel can be opened using a USB/ethernet converter (either USB-A or USB-C).\
-When connected to a device, it appears on command 'ip a' with a name starting by "enx" (and "Ethernet USB" by Ubuntu).\
-This connection shall be configured as static in Ubuntu settings, with IPv4 address being 192.168.10.1 and mask being 255.255.255.0. No IPv6 configuration required.
+When connected to a device, it appears on command `ip a` with a name starting by "enx" (and "Ethernet USB" by Ubuntu).\
+In Ubuntu settings, this connection shall be configured as static, with IPv4 address being 192.168.10.1 and mask being 255.255.255.0. No IPv6 configuration required.
+![ubuntu-settings](https://github.com/user-attachments/assets/7633092e-c127-4a0c-b518-83eb4ea7439e)
 
 > [!NOTE]  
 > Connection to the Valeo Wifi network is disabled. Hence, only wired connection is possible.
