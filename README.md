@@ -131,5 +131,22 @@ To open the ComboCS UI, open a brower and type `http://192.168.37.167/ui`.
 
 # 7. Full remote configuration
 Below is the recommeneded configuration for all connections between PCs, boards and the ComboCS.\
-It fully relies on DHCP mechanisms and VPN static addresses assigned to each device.
-![fullremote](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-full-remote.jpg "fullremote")
+It fully relies on routers, DHCP mechanisms and VPN static addresses assigned to every device.
+![fullremote](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-full-remote.jpg "fullremote")\
+As described in Phytec set up tutorial, each board shall have installed a VPN configuration file (with a specific IP address) and the VPN shall be activated.\
+Then, all boards can be connected to a router (at the office or at home) via the eth2 (DCHP) port.\
+All PCs shall have their VPN configuration files installed and the VPN activated also. They also have to be connected to the internet.\
+\
+After that, any board is reachable from any place using its VPN IP address: eg. `ssh root@10.52.253.36`.\
+\
+For the ComboCS, we use a SSH tunnel via Phytec connected to it.\
+To open the ComboCS UI, first open the SSH tunnel:\ 
+-From the PC, launch the following command:
+`ssh -L 15108:192.168.1.111:15108 -L 15110:192.168.1.111:15110 -L 15200:192.168.1.111:15200 -L 15111:192.168.1.111:15111 -L 39645:192.168.1.111:39645 -L 8080:192.168.1.111:80 root@10.52.253.36`
+> [!NOTE]  
+> Replace 10.52.253.36 by the IP address of the board used for the tunnel (one in the same router network).\
+> Replace 192.168.1.111 by the IP address of the ComboCS assigned by the router (most of the time, address will 192.168.1.111)\
+> To obtain it, you can either open the router admininstration UI to check all connected devices\
+> Or you can type `ip neigh show` from the Phytec board terminal to identify other devices IP addresses in the same network.
+
+Once done, you can open a brower and type `[http://localhost:](http://localhost:8080/ui/index.html)` to open the ComboCS UI.\
