@@ -22,7 +22,7 @@ When connected to a device, it appears on command 'ip a' with a name starting by
 This connection shall be configured as static in Ubuntu settings, with IPv4 address being 192.168.10.1 and mask being 255.255.255.0. No IPv6 configuration required.
 
 > [!NOTE]  
-> Connection to the Wifi Valeo network is disabled. Hence, only wired connection is possible.
+> Connection to the Valeo Wifi network is disabled. Hence, only wired connection is possible.
 
 ## On the Phytec board
 On the Phytec board, if set-up instructions have been followed correctly, no additional configuration is needed.\
@@ -52,11 +52,11 @@ Check by ping: `ping 8.8.8.8`
 
 ## 2c. With a smartphone as a router (wifi)
 ![phone-wifi](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-wifi-phone.jpg "phone-wifi")\
-Plug the wifi dongle in one of the USB port.\
+Plug the wifi dongle in one of the USB ports.\
 If you use a smartphone, open wifi access point on it.\
-Scan the available Wifi networks : `nmcli device wifi list`.\
+From the Phytec board, scan the available Wifi networks : `nmcli device wifi list`.\
 You may have to try several times, maybe even unplug/plug the dongle to make it work properly.\
-Connect to the wifi network: `nmcli device wifi connect "router_ssid" --ask`
+Once you detect the networks, connect to the wanted wifi network: `nmcli device wifi connect "router_ssid" --ask`
 
 > [!NOTE]  
 > "router_ssid" can refer to any smartphone or router you want to connect to.
@@ -76,7 +76,7 @@ This configuration is the simplest one for testing. It uses forced addresses on 
 ![static](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-static-testing.jpg "static")\
 Plug the ethernet cable on the eth0 port of the Phytec, and on the USB/eth converter of the PC.\
 On the PC, on Ubuntu, configure the wired connection (USB ethernet) with static address 192.168.10.1 and mask 255.255.255.0.\
-Then disable and enable the connection to take into account the changes.\
+Then turn off and turn on the connection to take into account the changes.\
 You can confirm the changes with the command `ip a` in the terminal of the PC.\
 ```
 l-rmunier@pon1-l13395:~$ ip a
@@ -108,3 +108,16 @@ root@192.168.10.3's password:
 Last login: Thu Nov 14 11:17:35 2024 from 10.52.253.11
 [root@tux-evse-valeo36 ~]# 
 ```
+# 3. Configuration for ISO15118 testing with the Trialog ComboCS (point-to-point connection)
+If you want to run tests with the Trialog with no router or any other complex configuration, we can configure the environment as defined here:
+![isop2p](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-iso-testing-point-to-point.jpg "isop2p")\
+From initial configuration of the Phytec board, nothing to be done on the board itself.\
+Plug the ethernet cable on the eth0 port (address 192.168.10.3).\
+\
+On the PC, configure:\
+- the wired connection (enx, USB ethernet) with static address 192.168.10.1 and mask 255.255.255.0.\
+- the wired connection (enp0, PCI ethernet) with static address 192.168.37.10 and mask 255.255.255.0.\
+Deactivate and activate both connections.\
+\
+Then connection to the Phytec board should work : "ssh root@192.168.10.3" from the PC.\
+To open the ComboCS UI, open a brower and type "http://192.168.37.167/ui".\
