@@ -108,8 +108,8 @@ root@192.168.10.3's password:
 Last login: Thu Nov 14 11:17:35 2024 from 10.52.253.11
 [root@tux-evse-valeo36 ~]# 
 ```
-# 3. Configuration for ISO15118 testing with the Trialog ComboCS (point-to-point connection)
-If you want to run tests with the Trialog with no router or any other complex configuration, we can configure the environment as defined here:
+# 4. Configuration for ISO15118 testing with the Trialog ComboCS (point-to-point connection)
+If you want to run tests with the Trialog ComboCS with no router or any other complex configuration, you can configure the environment as defined here:
 ![isop2p](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-iso-testing-point-to-point.jpg "isop2p")\
 From initial configuration of the Phytec board, nothing to be done on the board itself.\
 Plug the ethernet cable on the eth0 port (address 192.168.10.3).\
@@ -119,5 +119,11 @@ On the PC, configure:\
 - the wired connection (enp0, PCI ethernet) with static address 192.168.37.10 and mask 255.255.255.0.\
 Deactivate and activate both connections.\
 \
-Then connection to the Phytec board should work : "ssh root@192.168.10.3" from the PC.\
-To open the ComboCS UI, open a brower and type "http://192.168.37.167/ui".\
+Then connection to the Phytec board should work : `ssh root@192.168.10.3` from the PC.\
+To open the ComboCS UI, open a brower and type `http://192.168.37.167/ui`.\
+
+# 5. Configuration for ISO15118 testing with the Trialog ComboCS (with LAN connection, and SLAC bypassed)
+
+# 6. Configuration for ISO15118 testing with the Trialog ComboCS (with LAN connection, and SLAC activated)
+
+# 7. Configuration for ISO15118 testing with the Trialog ComboCS (with LAN connection, and SLAC activated)
