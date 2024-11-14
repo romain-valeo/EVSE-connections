@@ -11,7 +11,7 @@ This guide explains how to configure EVSE connections with different usecases.\
 
 # Nominal devices configuration :
 
-![Static testing configuration](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec connections-static-testing.jpg "Static testing configuration")
+![Static testing configuration](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-static-testing.jpg "Static testing configuration")
 
 
 
