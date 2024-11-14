@@ -6,9 +6,6 @@
 
 This guide explains how to configure EVSE connections with different usecases.
 
-> [!NOTE]  
-> Nothing here so far
-
 # 1. Nominal devices configuration
 Below is the recommended configuration of interfaces for both the Linux PC and the Phytec board:
 ![set-up](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-set-up.jpg "set-up")
@@ -137,7 +134,7 @@ It fully relies on routers, DHCP mechanisms and VPN static addresses assigned to
 ![fullremote](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-full-remote.jpg "fullremote")\
 As described in Phytec set up tutorial, each board shall have installed a VPN configuration file (with a specific IP address) and the VPN shall be activated.\
 Then, all boards can be connected to a router (at the office or at home) via the eth2 (DCHP) port.\
-All PCs shall have their VPN configuration files installed and the VPN activated also. They also have to be connected to the internet.\
+All PCs shall have their VPN configuration files installed and the VPN activated also. They also have to be connected to the internet (possible through the Valeo network).\
 \
 After that, any board is reachable from any place using its VPN IP address: eg. `ssh root@10.52.253.36`.\
 \
