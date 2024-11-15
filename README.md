@@ -44,7 +44,23 @@ eth0 is the one port next to the USB ports, eth1 is the other one.\
 eth0 port is configured as static with IPv4 address 192.168.10.3.\
 eth1 port is configured as dynamic (DHCP).\
 eth2 is an additional port not visible, which is used for the communication with the PLC module (Codico). No configuration of this port is required.
-
+```
+[root@tux-evse-valeo36 ~]# ip a
+[...]
+3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 28:b5:e8:e2:55:33 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.10.3/24 brd 192.168.10.255 scope global noprefixroute eth0
+       valid_lft forever preferred_lft forever
+4: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether be:d9:4a:fb:c9:10 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.104/24 brd 192.168.1.255 scope global dynamic noprefixroute eth1
+       valid_lft 84242sec preferred_lft 84242sec
+    inet6 fe80::ff8a:f213:b2fb:e56f/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+5: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 100
+    link/ether 96:c4:b5:a2:11:50 brd ff:ff:ff:ff:ff:ff
+[...]
+```
 # 2. How to connect the board to the internet
 There are several possibilities how to connect the board to the internet.\
 This can be useful to update the packages and bindings installed on the board.
