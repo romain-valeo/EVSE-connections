@@ -10,8 +10,6 @@ This guide explains how to configure EVSE connections with different usecases.
 Below is the recommended configuration of interfaces for both the Linux PC and the Phytec board:
 ![set-up](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-set-up.jpg "set-up")
 
-
-
 ## On the PC
 On the PC, the main ethernet port (on the right-hand side) shall be let with Ubuntu default settings (dynamic, DHCP), in order to be connected to the Valeo network or any router.\
 The name of this port generally starts with "enp0".\
@@ -63,7 +61,7 @@ eth2 is an additional port not visible, which is used for the communication with
     link/ether 96:c4:b5:a2:11:50 brd ff:ff:ff:ff:ff:ff
 [...]
 ```
-
+\
 
 # 2. How to connect the board to the internet
 There are several possibilities how to connect the board to the internet.\
