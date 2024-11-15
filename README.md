@@ -18,7 +18,23 @@ Another ethernet channel can be opened using a USB/ethernet converter (either US
 When connected to a device, it appears on command `ip a` with a name starting by "enx" (and "Ethernet USB" by Ubuntu).\
 In Ubuntu settings, this connection shall be configured as static, with IPv4 address being 192.168.10.1 and mask being 255.255.255.0. No IPv6 configuration required.\
 ![ubuntu-settings](https://github.com/user-attachments/assets/7633092e-c127-4a0c-b518-83eb4ea7439e)
-
+```
+l-rmunier@pon1-l13395:~$ ip a
+[...]
+2: enp0s31f6: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:2b:67:ba:83:ad brd ff:ff:ff:ff:ff:ff
+    inet 10.25.44.214/22 brd 10.25.47.255 scope global dynamic noprefixroute enp0s31f6
+       valid_lft 689207sec preferred_lft 689207sec
+    inet6 fe80::6224:3bec:f18a:d1b0/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+[...]
+1156: enxf8e43b040da9: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether f8:e4:3b:04:0d:a9 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.10.1/24 brd 192.168.10.255 scope global noprefixroute enxf8e43b040da9
+       valid_lft forever preferred_lft forever
+    inet6 fe80::656f:45a9:e196:8ec/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+```
 > [!NOTE]  
 > Connection to the Valeo Wifi network is disabled. Hence, only wired connection is possible.
 
