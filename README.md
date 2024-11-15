@@ -163,14 +163,10 @@ To open the ComboCS UI, open a brower and type `http://192.168.37.167/ui`.
 
 # 5. Configuration for ISO15118 testing with the Trialog ComboCS (with LAN connection, and SLAC bypassed)
 ![iso-lan-slac](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-iso-testing-lan-slacbypassed.jpg "iso-lan-without-slac")
-
-
-
+ \
 # 6. Configuration for ISO15118 testing with the Trialog ComboCS (with LAN connection, and SLAC activated)
 ![iso-lan-slac](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-iso-testing-lan-slac.jpg "iso-lan-slac")
-
-
-
+ \
 # 7. Full remote configuration
 Below is the recommeneded configuration for all connections between PCs, boards and the ComboCS.\
 As it is, any device can be reached remotely.\
@@ -182,7 +178,8 @@ All PCs shall have their VPN configuration files installed and the VPN activated
 \
 After that, any board is reachable from any place using its VPN IP address: eg. `ssh root@10.52.253.36`.\
 \
-To command the ComboCS remotely, we need to use a SSH tunnel, via Phytec connected to it.\
+ \
+Furthermore, to command the ComboCS remotely, we need to use a SSH tunnel, via Phytec connected to it.\
 To open the ComboCS UI, first open the SSH tunnel: \
 -From the PC, launch the following command:
 `ssh -L 15108:192.168.1.111:15108 -L 15110:192.168.1.111:15110 -L 15200:192.168.1.111:15200 -L 15111:192.168.1.111:15111 -L 39645:192.168.1.111:39645 -L 8080:192.168.1.111:80 root@10.52.253.36`
@@ -193,4 +190,4 @@ To open the ComboCS UI, first open the SSH tunnel: \
 > To obtain it, you can either open the router admininstration UI to check all connected devices,\
 > or you can type `ip neigh show` from the Phytec board terminal to identify all other devices IP addresses in the same network.
 
-Once done, you can open a brower and type `http://localhost:8080/ui/index.html` to open the ComboCS UI.
+Once done, you can open a browser and type `http://localhost:8080/ui/index.html` to open the ComboCS UI.
