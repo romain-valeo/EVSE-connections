@@ -139,7 +139,7 @@ Last login: Thu Nov 14 11:17:35 2024 from 10.52.253.11
 [root@tux-evse-valeo36 ~]# 
 ```
 # 4. Configuration for ISO15118 testing with the Trialog ComboCS (point-to-point connection)
-If you want to run tests with the Trialog ComboCS with no router or any other complex configuration, you can configure the environment as defined here:
+If you want to run tests with the Trialog ComboCS with no router or any other complex configuration, you can configure the environment as defined here:\
 ![isop2p](https://github.com/romain-valeo/EVSE-connections/blob/main/Phytec-connections-iso-testing-point-to-point.jpg "isop2p")\
 From initial configuration of the Phytec board, nothing to be done on the board itself.\
 Plug the ethernet cable on the eth0 port (address 192.168.10.3).\
